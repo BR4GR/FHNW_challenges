@@ -85,3 +85,5 @@ def add_to_hash_set_double_hashing(table, elem):
         h = (h + step) % len(table)
         if table[h] is None:
             table[h] = elem
+
+print(hash('r'))
