@@ -154,25 +154,21 @@ def solve4():
 N_ITTERATIONS = 10_000
 print(solve())
 f1 = timeit.timeit(solve, number=N_ITTERATIONS)
-print(f"solve primitive: {f1}")
-print('this will not solve part 2\n')
+print(f"solve primitive: {f1}\n")
 
 print(solve2())
 f2 = timeit.timeit(solve2, number=N_ITTERATIONS)
 print(f"solve with dict as nodes: {f2}")
-print(f"that's {f1/f2} times faster than primitive")
-print('this solved part two in 9.784249715 seconds\n')
+print(f"that's {f1/f2} times faster than primitive\n")
 
 print(solve3())
 f3 = timeit.timeit(solve3, number=N_ITTERATIONS)
 print(f"solve using list indexes as nodes: {f3}")
 print(f"that's {f1/f3} times faster than primitive")
-print(f"and {f2/f3} times faster than the dict solution")
-print('this solved part two in 6.675766274 seconds\n')
+print(f"and {f2/f3} times faster than the dict solution\n")
 
 print(solve4())
 f4 = timeit.timeit(solve4, number=N_ITTERATIONS)
 print(f"solve using numpy indexes as nodes: {f4}")
 print(f"that's {f1/f4} times faster than primitive")
 print(f"and {f3/f4} times faster than the list index solution\n")
-print('this solved part two in 12.487709971 seconds\n')

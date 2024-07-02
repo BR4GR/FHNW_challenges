@@ -1,6 +1,6 @@
-
 def solve_dict():
     from time import time_ns
+
     st = time_ns()
     MAX = 1_000_000
     input = {
@@ -26,16 +26,16 @@ def solve_dict():
         c = input[b]
 
         destination = current - 1
-        while destination == a or destination == b or destination == c or destination == 0:
+        while (
+            destination == a or destination == b or destination == c or destination == 0
+        ):
             destination = destination - 1
             if destination <= 0:
                 destination = MAX
         input[current] = input[c]
-        destination_points_to = input[destination]
         input[c] = input[destination]
         input[destination] = a
         current = input[current]
-
 
     a = input[1]
     b = input[a]
@@ -44,15 +44,18 @@ def solve_dict():
     et = time_ns()
     elapsed = et - st
 
-    print('solving using a dict.')
+    print("solving using a dict.")
     print(f"{a} * {b} = {res}")
     print(f"took {elapsed} nanoseconds")
     print(f"which is {elapsed/ 1_000_000_000} seconds\n")
 
+
 solve_dict()
+
 
 def solve_np():
     from time import time_ns
+
     import numpy as np
 
     input = [4, 9, 6, 1, 3, 8, 5, 2, 7]
@@ -79,7 +82,9 @@ def solve_np():
         c = input[b]
 
         destination = current - 1
-        while destination == a or destination == b or destination == c or destination == 0:
+        while (
+            destination == a or destination == b or destination == c or destination == 0
+        ):
             destination = destination - 1
             if destination <= 0:
                 destination = MAX
@@ -89,7 +94,6 @@ def solve_np():
         input[destination] = a
         current = input[current]
 
-
     a = input[1]
     b = input[a]
     res = a * b
@@ -97,17 +101,20 @@ def solve_np():
     et = time_ns()
     elapsed = et - st
 
-    print('\nsolving using a numpy.')
+    print("\nsolving using a numpy.")
     print(f"{a} * {b} = {res}")
     print(f"took {elapsed} nanoseconds")
     print(f"which is {elapsed/ 1_000_000_000} seconds")
+
 
 solve_np()
 
 
 def solve_list():
     from time import time_ns
+
     import numpy as np
+
     st = time_ns()
 
     input = [4, 9, 6, 1, 3, 8, 5, 2, 7]
@@ -132,7 +139,9 @@ def solve_list():
         c = input[b]
 
         destination = current - 1
-        while destination == a or destination == b or destination == c or destination == 0:
+        while (
+            destination == a or destination == b or destination == c or destination == 0
+        ):
             destination = destination - 1
             if destination <= 0:
                 destination = MAX
@@ -142,7 +151,6 @@ def solve_list():
         input[destination] = a
         current = input[current]
 
-
     a = input[1]
     b = input[a]
     res = a * b
@@ -150,9 +158,11 @@ def solve_list():
     et = time_ns()
     elapsed = et - st
 
-    print('\nsolving using a list.')
+    print("\nsolving using a list.")
     print(f"{a} * {b} = {res}")
     print(f"took {elapsed} nanoseconds")
     print(f"which is {elapsed/ 1_000_000_000} seconds")
 
+
 solve_list()
+
